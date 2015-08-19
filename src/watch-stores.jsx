@@ -24,17 +24,26 @@ export default function watchStores(Component, ...storeNames) {
   }
 
   return class WatchStore extends React.Component {
+    constructor(...args) {
+      super(...args);
+      this._setStateFromFlux = this.setStateFromFlux.bind(this);
+    }
+
     static get contextTypes() {
       return {
         flux: React.PropTypes.object
       };
     }
 
+    componentWillMount() {
+      this.setStateFromFlux();
+    }
+
     componentDidMount() {
       const flux = this._getFlux();
       /* https://github.com/BinaryMuse/fluxxor/blob/8c0c79ad4eef1167cbde5bd7fd488de31f9a3a26/lib/store_watch_mixin.js#L8 */
       storeNames.forEach((store) => {
-        flux.store(store).on("change", this.setStateFromFlux.bind(this));
+        flux.store(store).on("change", this._setStateFromFlux);
       });
     }
 
@@ -42,7 +51,7 @@ export default function watchStores(Component, ...storeNames) {
       const flux = this._getFlux();
       /* https://github.com/BinaryMuse/fluxxor/blob/8c0c79ad4eef1167cbde5bd7fd488de31f9a3a26/lib/store_watch_mixin.js#L15 */
       storeNames.forEach((store) => {
-        flux.store(store).removeListener("change", this.setStateFromFlux.bind(this));
+        flux.store(store).removeListener("change", this._setStateFromFlux);
       });
     }
 
