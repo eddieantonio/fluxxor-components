@@ -157,7 +157,7 @@ describe('createFluxContext', () => {
     expect(element.getDOMNode().textContent).to.equal('blarrh, this is a string');
   });
 
-  it.skip('passes its non-immediate ancestors can the flux instance', () => {
+  it.skip('passes its non-immediate ancestors a flux instance', () => {
 
     /* Render using props and the flux instance. */
     class GrandChild extends React.Component {

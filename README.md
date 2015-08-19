@@ -1,7 +1,10 @@
 # Fluxxor Components
 
-[Higher-order components][hoc] for use with [Fluxxor][]. These are meant
-to replace [FluxMixin][] and [StoreWatchMixin][].
+[![Build Status](https://travis-ci.org/eddieantonio/fluxxor-components.svg)](https://travis-ci.org/eddieantonio/fluxxor-components)
+
+[Higher-order components][hoc] for use with [Fluxxor][]. These are
+intended to replace [FluxMixin][] and [StoreWatchMixin][] when using
+ECMAScript 2015 classes.
 
 [Fluxxor]: https://github.com/BinaryMuse/fluxxor
 [hoc]: https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750
