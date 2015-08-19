@@ -1,5 +1,7 @@
-import createFluxContext from './lib/flux-context';
-import watchStores from './lib/watch-store';
-
-/* We have two exports total! */
-export {createFluxContext, watchStores};
+/**
+ * Export all components.
+ */
+module.exports = {
+  createFluxContext: require('./lib/flux-context'),
+  watchStores: require('./lib/watch-stores')
+};
