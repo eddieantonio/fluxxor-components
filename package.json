@@ -1,0 +1,28 @@
+{
+  "name": "fluxxor-components",
+  "version": "0.1.0",
+  "description": "Higher-order components for Fluxxor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eddieantonio/fluxxor-components.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register test/*.jsx"
+  },
+  "author": "Eddie Antonio Santos <easantos@ualberta.ca> (http://eddieantonio.ca)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "chai": "^3.2.0",
+    "fluxxor": "^1.7.1",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "react": "^0.13.3",
+    "testdom": "^1.1.0"
+  },
+  "peerDependencies": {
+    "fluxxor": ">= 1.5.0",
+    "react": ">= 0.13.0"
+  }
+}
